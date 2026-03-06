@@ -7,7 +7,7 @@ app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
 # RapidAPI Dashboard > Hub Listing > Security se mili Proxy Secret yahan likhein
 # Abhi ke liye testing ke liye aap isse empty bhi chor sakte hain ya koi secret rakh dein
-RAPIDAPI_SECRET = "YOUR_ACTUAL_PROXY_SECRET_HERE"
+RAPIDAPI_SECRET = "878f8ed0-194b-11f1-a82f-07313300c318"
 
 @app.get("/")
 def home():
@@ -39,4 +39,5 @@ def get_crypto(x_rapidapi_proxy_secret: str = Header(None)):
         response = requests.get(url).json()
         return response
     except Exception as e:
+
         return {"error": "Service temporarily unavailable"}
